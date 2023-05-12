@@ -1,0 +1,35 @@
+﻿<Window x:Class="FamilyFinances.Querys"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FamilyFinances"
+        mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        Title="Querys" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ComboBox Grid.Column="0" Name="comboBoxTable" Width="770" Height="30"
+                          Margin="5,5,15,0" FontSize="18" SelectedIndex="0"
+                          SelectionChanged="comboBoxTable_SelectionChanged"
+                          HorizontalAlignment="Right">
+                <ComboBoxItem Content="Cписка семей, их общего дохода и общих сбережений"/>
+                <ComboBoxItem Content="Cписка семей и их общих расходов по каждой категории расходов"/>
+                <ComboBoxItem Content="Cуммы доходов и сбережений по каждой категории доходов"/>
+                <ComboBoxItem Content="Cписка продуктов, их категорий, общего количества заказанных продуктов и общих затрат на каждый продукт"/>
+                <ComboBoxItem Content="Информации о расходах каждой семьи на каждую категорию продуктов"/>
+                <ComboBoxItem Content="Списка семей с их общими доходами, сбережениями, расходами и балансом"/>
+                <ComboBoxItem Content="Cписка продуктов, их категорий и количества заказанных продуктов для каждой семьи"/>
+                <ComboBoxItem Content="Cписка семей с их общим доходом, сбережениями и расходами по каждой категории доходов"/>
+                <ComboBoxItem Content="Cписка продуктов, их категорий, свежести и калорийности, а также общего количества заказанных продуктов и общих затрат на каждый продукт для каждой семьи"/>
+                <ComboBoxItem Content="Cписка семей с их общим доходом, сбережениями и расходами по каждой категории продуктов"/>
+            </ComboBox>
+        </Grid>
+        <DataGrid Grid.Row="1" x:Name="dataGridTables"  Margin="5,5,5,10"
+                      AutoGenerateColumns="True"/>
+    </Grid>
+</Window>

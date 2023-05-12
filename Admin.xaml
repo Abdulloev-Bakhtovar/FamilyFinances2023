@@ -1,0 +1,39 @@
+﻿<Window x:Class="FamilyFinances.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FamilyFinances"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Title="Admin" Height="450" Width="783">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button Name="buttonBack" Width="100" Margin="10 0"
+                    Height="30" HorizontalAlignment="Left" HorizontalContentAlignment="Center"
+                    Content="Назад" FontSize="20" Click="buttonBack_Click"/>
+        </Grid>
+        <DataGrid Grid.Row="1" x:Name="dataGridTables"  Margin="5,5,5,0"
+                      AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="30" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Логин" Width="100" Binding="{Binding User_name}"/>
+                <DataGridTextColumn Header="Пароль" Width="470" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Роль" Width="150" Binding="{Binding Role}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Orientation="Horizontal" >
+            <Button Name="buttonInsert" Width="100" Height="30" Content="Добавить" FontSize="20"
+                    Click="buttonInsert_Click" Margin="10 0"/>
+            <Button Name="buttonDelete" Width="100" Height="30" Content="Удалить" FontSize="20"
+                    Click="buttonDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
